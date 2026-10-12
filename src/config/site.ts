@@ -7,7 +7,12 @@ export const site = {
   tagline: "Sisterhood, in full color.",
   description:
     "Behna is South Asian–inspired swimwear: the colors, prints and embellishment of home, cut for sun-soaked days and late nights.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  // Your domain once connected; on Vercel it falls back to the project's production URL
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    (process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "http://localhost:3000"),
   // PLACEHOLDERS — confirm your real handle and inbox before launch
   instagram: "https://www.instagram.com/behnabikinis",
   email: "hello@behnabikinis.com",
